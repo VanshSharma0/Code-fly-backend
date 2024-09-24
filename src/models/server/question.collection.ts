@@ -1,7 +1,6 @@
-import { IndexType } from 'node-appwrite';
-import {db, questionCollection} from '../name';
-import {client, databases} from './config';
-import { Permission } from 'appwrite';
+import {IndexType, Permission} from "node-appwrite"
+import {db, questionCollection} from "../name"
+import {databases} from "./config"
 
 export default async function createQuestionCollection(){
     await databases.createCollection(db, questionCollection, questionCollection, [
@@ -24,8 +23,8 @@ export default async function createQuestionCollection(){
 
     // create index
 
-    // await Promise.all([
-    //     databases.createIndex(db, questionCollection, "title", IndexType.Fulltext, ["title"], ["asc"]),
-    //     databases.createIndex(db, questionCollection, "content", IndexType.Fulltext, ["title"], ["asc"])
-    // ])
+    await Promise.all([
+        databases.createIndex(db, questionCollection, "title", IndexType.Fulltext, ["title"], ["asc"]),
+        databases.createIndex(db, questionCollection, "content", IndexType.Fulltext, ["title"], ["asc"])
+    ])
 }
