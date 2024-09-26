@@ -35,3 +35,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .env
+package-lock.json
+.gitignore
+env.ts
+C:\Users\vansh\OneDrive\Desktop\code-fly\src\app\env.ts
+src\app\env.ts
